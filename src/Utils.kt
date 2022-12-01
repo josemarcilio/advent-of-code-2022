@@ -3,10 +3,14 @@ import java.math.BigInteger
 import java.security.MessageDigest
 
 /**
+ * Read text from the given input txt file.
+ */
+fun readInputText(name: String) = File("src", "$name.txt").readText().replace("\r\n", "\n")
+
+/**
  * Reads lines from the given input txt file.
  */
-fun readInput(name: String) = File("src", "$name.txt")
-    .readLines()
+fun readInput(name: String) = File("src", "$name.txt").readLines()
 
 /**
  * Converts string to md5 hash.
@@ -14,3 +18,4 @@ fun readInput(name: String) = File("src", "$name.txt")
 fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteArray()))
     .toString(16)
     .padStart(32, '0')
+
