@@ -19,3 +19,19 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
     .toString(16)
     .padStart(32, '0')
 
+/**
+ * Split string by new line character \n
+ */
+fun String.splitLines() = this.split("\n")
+
+/**
+ * Split string by two new line characters \n\n
+ */
+fun String.splitEmptyLines() = this.split("\n\n")
+
+/**
+ * Returns n max values from a list
+ */
+fun List<Int>.top(n: Int): List<Int> {
+    return this.sortedDescending().subList(0, n)
+}

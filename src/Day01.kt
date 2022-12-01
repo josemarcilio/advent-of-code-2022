@@ -1,19 +1,20 @@
 fun main() {
     fun part1(input: String): Int {
-        val caloriesByElf = input.split("\n\n")
-
-        return caloriesByElf.maxOf {
-            it.split("\n").sumOf(String::toInt)
-        }
+        return input
+            .splitEmptyLines()
+            .maxOf { it
+                .splitLines()
+                .sumOf(String::toInt)
+            }
     }
 
     fun part2(input: String): Int {
-        val caloriesByElf = input.split("\n\n")
-
-        return caloriesByElf
-            .map{ it.split("\n").sumOf(String::toInt) }
-            .sortedDescending()
-            .subList(0, 3)
+        return input.splitEmptyLines()
+            .map{ it
+                .splitLines()
+                .sumOf(String::toInt)
+            }
+            .top(3)
             .sum()
     }
 
