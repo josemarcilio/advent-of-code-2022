@@ -35,3 +35,8 @@ fun String.splitEmptyLines() = this.split("\n\n")
 fun List<Int>.top(n: Int): List<Int> {
     return this.sortedDescending().subList(0, n)
 }
+
+/**
+ * Return alphabetical order (Int) of a letter. Lowercase first.
+ */
+fun Char.alphabeticalOrder() = 1 + (('a'..'z') + ('A'..'Z')).indexOf(this)
