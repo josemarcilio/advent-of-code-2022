@@ -1,7 +1,7 @@
 fun main() {
     fun part1(input: List<String>): Int {
         return input.sumOf {
-            val (elf, me) = it.split(  " ")
+            val (elf, me) = it.split(" ")
 
             mapOf(
                 "A" to mapOf("X" to 4, "Y" to 8, "Z" to 3),
